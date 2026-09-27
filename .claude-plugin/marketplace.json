@@ -7,14 +7,14 @@
   },
   "metadata": {
     "description": "Thinking and ideation skills, packaged as one Claude Code plugin.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "ThinkTime",
       "source": "./ThinkTime",
-      "description": "Six skills for ideation, critique, strategic analysis, comparison, and usage reflection.",
-      "version": "1.0.0",
+      "description": "Seven skills for ideation, idea refinement, critique, strategic analysis, comparison, and usage reflection.",
+      "version": "1.1.0",
       "author": {
         "name": "z0rd0n88"
       },
@@ -25,7 +25,8 @@
         "brainstorming",
         "decision-making",
         "swot",
-        "comparison"
+        "comparison",
+        "idea-refinement"
       ]
     }
   ]
