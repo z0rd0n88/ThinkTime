@@ -1,0 +1,24 @@
+{
+  "bundle_sha256": "fed22eca0269af72f230a6cce3d85251c05f6358d80fe12b79bca41ab3d3ed44",
+  "checks": [
+    "checks.sh"
+  ],
+  "constraints": [],
+  "created": "2026-08-04T00:00:00Z",
+  "denylist": [],
+  "discrimination": {
+    "broken_pass_rate": 0.0,
+    "gate_broken_hard_exit": 1,
+    "gate_reference_exit": 0,
+    "reference_pass_rate": 1.0,
+    "verified_at": "2026-08-04T16:51:28.627876Z",
+    "verified_fixture_version": 1
+  },
+  "fixture_id": "spec-from-vague-issue",
+  "fixture_version": 1,
+  "head_sha": "eb3630cfd3c7f022e91580acd159190f7853695b",
+  "kind": "skill",
+  "last_verified": "2026-08-04T16:51:28.627876Z",
+  "prompt_file": "prompt.md",
+  "verified_claude_version": null
+}

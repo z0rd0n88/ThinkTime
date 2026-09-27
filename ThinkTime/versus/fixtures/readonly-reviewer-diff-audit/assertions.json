@@ -1,0 +1,8 @@
+{
+  "assertions": [
+    {"id": "A1", "text": "The review states a clear verdict that the diff introduces a bug, not that the diff looks correct or is approved as-is."},
+    {"id": "A2", "text": "The review specifically identifies the missing '/ 100' division as the root cause — that discount_percent is being applied as a raw multiplier instead of a percentage."},
+    {"id": "A3", "text": "The review gives a concrete example with specific price/quantity/discount_percent values and states the wrong numeric output the bug produces for them."},
+    {"id": "A4", "text": "The review recommends the change not ship as-is (e.g. restoring the division) rather than merely noting the discrepancy without a recommendation."}
+  ]
+}

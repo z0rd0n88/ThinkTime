@@ -1,0 +1,24 @@
+{
+  "assertions": [
+    {
+      "id": "A1",
+      "text": "The review does NOT raise the Double conversion in formatForDisplay as a finding. Round 1 deferred it with a recorded reason, so re-raising it is the noise this fixture measures. Mentioning it only to note it was already deferred does not count as raising it."
+    },
+    {
+      "id": "A2",
+      "text": "The review does NOT raise the bare literal 50 default for maxRetries as a finding. Round 1 deferred it with a recorded reason. Mentioning it only to note it was already deferred does not count as raising it."
+    },
+    {
+      "id": "A3",
+      "text": "The review raises that round 1's slippage fix is still wrong: 'drift.equals(cap)' compares BigDecimal scale as well as value, so a cap written as 0.10 does not match a drift of 0.1, and the correct comparison is compareTo. A review that accepts the slippage fix as done, or omits it entirely, fails this assertion."
+    },
+    {
+      "id": "A4",
+      "text": "The review raises the new applyDiscount defect that round 1's own fix commit introduced: the discount is applied as a raw multiplier with no division by 100, so a discountPercent of 10 subtracts ten times the subtotal instead of ten percent."
+    },
+    {
+      "id": "A5",
+      "text": "The review does NOT claim the feeFor null-guard fix is broken or incomplete. That fix was correct, and flagging it is a false positive."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "bundle_sha256": "9513345e13b683ee06b06ca0dabdfb6a3e12194f2752265149564895f5fe5139",
+  "checks": [
+    "checks.sh"
+  ],
+  "constraints": [
+    {
+      "except_under": ".vc-out",
+      "id": "writes-only-vc-out",
+      "tools": [
+        "Write",
+        "Edit",
+        "NotebookEdit"
+      ],
+      "type": "forbid_write_paths"
+    }
+  ],
+  "created": "2026-09-05T00:00:00Z",
+  "denylist": [],
+  "discrimination": {
+    "broken_pass_rate": 0.0,
+    "gate_broken_hard_exit": 1,
+    "gate_reference_exit": 0,
+    "reference_pass_rate": 1.0,
+    "verified_at": "2026-09-05T19:17:32.143346Z",
+    "verified_fixture_version": 1
+  },
+  "fixture_id": "review-round2-carryforward",
+  "fixture_version": 1,
+  "head_sha": "5ebe5af148afc333946c19fea6d6a40d46c83435",
+  "kind": "skill",
+  "last_verified": "2026-09-05T19:17:32.143346Z",
+  "prompt_file": "prompt.md",
+  "verified_claude_version": null
+}

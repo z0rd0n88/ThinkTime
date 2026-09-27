@@ -1,0 +1,43 @@
+From 305ed8a557f448ba308c24b5a4c58776c382e0a0 Mon Sep 17 00:00:00 2001
+From: versus-dev <dev@versus.invalid>
+Date: Sat, 5 Sep 2026 12:00:00 -0700
+Subject: [PATCH] broken: repeats the standards lens, restates round 1, misses
+ every class instance, false-positives in the decoy
+
+---
+ .vc-out/review.md | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+ create mode 100644 .vc-out/review.md
+
+diff --git a/.vc-out/review.md b/.vc-out/review.md
+new file mode 100644
+index 0000000..dd90bf4
+--- /dev/null
++++ b/.vc-out/review.md
+@@ -0,0 +1,23 @@
++# Round 2 review
++
++**Lens used: standards.** Same standards review as round 1, re-run over the
++fix commit.
++
++## HIGH - src/OrderPricing.kt:14 - computeSubtotal rounding order
++`unitPrice.setScale(2).multiply(quantity)` rounds the unit price before
++multiplying, which compounds the rounding error across quantity. Round once,
++after the multiply.
++
++## HIGH - src/OrderPricing.kt:31 - slippage cap compared with equals
++`drift.equals(cap)` compares BigDecimal scale as well as value. Use
++`compareTo`.
++
++## MEDIUM - src/RefundPolicy.kt:16 - isRefundable boundary is off by one
++`daysSincePurchase <= 30` lets a 30-day-old order through. This should almost
++certainly be `< 30`.
++
++## MEDIUM - src/OrderPricing.kt:10 - maxRetries defaults to a bare literal 50
++Magic number. Extract a named constant.
++
++The tier pricing helper, the fee helpers and the rate table look correct. No
++further issues.
+-- 
+2.43.0
+

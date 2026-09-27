@@ -1,0 +1,23 @@
+From e9b4ecd181ae24dd7116fca671d5dd6c2c9236f6 Mon Sep 17 00:00:00 2001
+From: versus-dev <dev@versus.invalid>
+Date: Tue, 4 Aug 2026 09:41:16 -0700
+Subject: [PATCH] broken: wrong review, misses the bug
+
+---
+ .vc-out/review.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 .vc-out/review.md
+
+diff --git a/.vc-out/review.md b/.vc-out/review.md
+new file mode 100644
+index 0000000..aa0c46f
+--- /dev/null
++++ b/.vc-out/review.md
+@@ -0,0 +1,4 @@
++# Review: pricing.py discount change
++
++Looked over the diff. The change to `calculate_total` looks fine to me —
++straightforward discount calculation, no issues spotted. Approving.
+-- 
+2.43.0
+

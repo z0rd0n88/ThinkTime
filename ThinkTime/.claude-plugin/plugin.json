@@ -1,0 +1,36 @@
+{
+  "name": "ThinkTime",
+  "description": "Thinking and ideation skills for Claude Code: idea generation, panel thinking, design critique, SWOT analysis, comparisons, and usage reflection.",
+  "version": "1.0.0",
+  "author": {
+    "name": "z0rd0n88"
+  },
+  "homepage": "https://github.com/z0rd0n88/ThinkTime",
+  "repository": "https://github.com/z0rd0n88/ThinkTime",
+  "license": "MIT",
+  "keywords": [
+    "thinking",
+    "ideation",
+    "brainstorming",
+    "decision-making",
+    "swot",
+    "comparison"
+  ],
+  "skills": [
+    "./idea-nebula/skills",
+    "./idea-panel/skills",
+    "./i-cant-even/skills",
+    "./improve-me/skills",
+    "./swot-analysis/skills",
+    "./versus/skills"
+  ],
+  "commands": [
+    "./idea-nebula/commands",
+    "./idea-panel/commands",
+    "./i-cant-even/commands",
+    "./improve-me/commands",
+    "./swot-analysis/commands",
+    "./versus/commands"
+  ],
+  "hooks": []
+}

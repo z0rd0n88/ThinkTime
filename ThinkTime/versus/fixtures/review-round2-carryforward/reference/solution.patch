@@ -1,0 +1,37 @@
+From b245d304490c895cbe03e5108212c859ce63335d Mon Sep 17 00:00:00 2001
+From: versus-dev <dev@versus.invalid>
+Date: Sat, 5 Sep 2026 12:14:35 -0700
+Subject: [PATCH] reference: round-2 review that suppresses deferred, catches
+ the bad fix and the new bug
+
+---
+ .vc-out/review.md | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+ create mode 100644 .vc-out/review.md
+
+diff --git a/.vc-out/review.md b/.vc-out/review.md
+new file mode 100644
+index 0000000..17041ae
+--- /dev/null
++++ b/.vc-out/review.md
+@@ -0,0 +1,17 @@
++# Round 2 review — round-1 fix commit
++
++## HIGH — src/OrderPricing.kt:17 — the round-1 slippage fix did not work
++`drift.equals(cap)` compares BigDecimal **scale as well as value**, so a cap of
++`0.10` does not match a drift of `0.1` and the boundary case silently reports
++out-of-cap. Round 1 claimed this fixed; it is not. Use `compareTo(cap) <= 0`.
++
++## HIGH — src/OrderPricing.kt:10 — round 1's new applyDiscount is off by 100x
++`subtotal.multiply(discountPercent)` applies the percentage as a raw multiplier
++with no division by 100. A `discountPercent` of `10` subtracts ten times the
++subtotal rather than ten percent of it, returning a large negative total. This
++defect was introduced by round 1's own fix commit.
++
++## Notes
++- `formatForDisplay` Double conversion and the literal `50` default were both
++  deferred in round 1 with recorded reasons; not re-raised here.
++- The `feeFor` null guard from round 1 is correct as applied.
+-- 
+2.43.0
+

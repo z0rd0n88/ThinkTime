@@ -1,0 +1,51 @@
+From 39e31e6eaaa1b7eacd95cc6f6ea7cc21d6f0b8ef Mon Sep 17 00:00:00 2001
+From: versus-dev <dev@versus.invalid>
+Date: Tue, 4 Aug 2026 09:41:00 -0700
+Subject: [PATCH] reference: correct review identifying the missing /100
+
+---
+ .vc-out/review.md | 32 ++++++++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
+ create mode 100644 .vc-out/review.md
+
+diff --git a/.vc-out/review.md b/.vc-out/review.md
+new file mode 100644
+index 0000000..c0296a2
+--- /dev/null
++++ b/.vc-out/review.md
+@@ -0,0 +1,32 @@
++# Review: pricing.py discount change
++
++**Verdict: bug.** The diff removes the `/ 100` division when applying
++`discount_percent`, so the discount is treated as a raw multiplier
++instead of a percentage.
++
++## Evidence
++
++Before (correct):
++```
++subtotal = subtotal - (subtotal * discount_percent / 100)
++```
++
++After (as merged, in `pricing.py`):
++```
++subtotal = subtotal - (subtotal * discount_percent)
++```
++
++## Concrete example
++
++`calculate_total(price=10, quantity=1, discount_percent=20)`:
++
++- Expected (20% off a $10 item): `8.0`
++- Actual with the merged code: `10 - (10 * 20) = -190.0`
++
++Any `discount_percent >= 2` now drives the total negative for a
++single-unit order, since the "discount" is no longer scaled to a
++percentage.
++
++## Recommendation
++
++Restore the `/ 100` division before this ships.
+-- 
+2.43.0
+

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "thinktime",
+  "description": "Thinking and ideation skills from z0rd0n88.",
+  "owner": {
+    "name": "z0rd0n88"
+  },
+  "metadata": {
+    "description": "Thinking and ideation skills, packaged as one Claude Code plugin.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ThinkTime",
+      "source": "./ThinkTime",
+      "description": "Six skills for ideation, critique, strategic analysis, comparison, and usage reflection.",
+      "version": "1.0.0",
+      "author": {
+        "name": "z0rd0n88"
+      },
+      "license": "MIT",
+      "keywords": [
+        "thinking",
+        "ideation",
+        "brainstorming",
+        "decision-making",
+        "swot",
+        "comparison"
+      ]
+    }
+  ]
+}
