@@ -1,0 +1,37 @@
+From b3087a287bdf62d1e1d71b8b5f20ffa019f4bc0a Mon Sep 17 00:00:00 2001
+From: versus-dev <dev@versus.invalid>
+Date: Sat, 5 Sep 2026 12:16:20 -0700
+Subject: [PATCH] broken: re-raises both deferred findings, accepts the bad
+ slippage fix, false-positives on the good one
+
+---
+ .vc-out/review.md | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+ create mode 100644 .vc-out/review.md
+
+diff --git a/.vc-out/review.md b/.vc-out/review.md
+new file mode 100644
+index 0000000..bbfafb3
+--- /dev/null
++++ b/.vc-out/review.md
+@@ -0,0 +1,17 @@
++# Round 2 review
++
++## HIGH — src/OrderPricing.kt:22 — formatForDisplay converts through Double
++IEEE 754 conversion on a monetary amount. Use BigDecimal formatting.
++
++## MEDIUM — src/OrderPricing.kt:6 — maxRetries defaults to a bare literal 50
++Magic number. Extract a named constant.
++
++## MEDIUM — src/OrderPricing.kt:24 — feeFor null guard is incomplete
++Returning ZERO for a null order silently hides a caller bug; this fix should
++throw instead of swallowing the null.
++
++## LOW — src/OrderPricing.kt:10 — applyDiscount could use a guard clause
++Style only.
++
++The slippage comparison was fixed in round 1 and looks good now. No blocking
++issues.
+-- 
+2.43.0
+

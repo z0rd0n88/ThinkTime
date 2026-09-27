@@ -1,0 +1,44 @@
+{
+  "assertions": [
+    {
+      "id": "B1",
+      "text": "The review states which review lens or shape it used, and it is NOT the 'standards' lens that round 1 used. Acceptable declarations include a merged standards+spec lens, a spec-only lens, or a class-of-defect hunt. A review that declares no lens at all, or declares the standards lens again, fails this assertion."
+    },
+    {
+      "id": "B2",
+      "text": "The review raises that round 1's change to applyTierPricing now contradicts docs/pricing-rules.md. The spec gives its tier rule ONLY as worked examples - quantity 10 is Bulk (5%) and quantity 100 is Wholesale (10%) - and round 1 changed the comparisons from '>=' to '>', so an order of exactly 10 now falls to Standard and exactly 100 falls to Bulk. The finding must connect the code to the documented examples: raising the comparison change without reference to the spec, or noting the spec without identifying the code contradiction, fails this assertion."
+    },
+    {
+      "id": "B3",
+      "text": "The review raises src/FeeCalculator.kt withinFeeCap: 'fee.equals(cap)' compares BigDecimal scale as well as value and should be compareTo, exactly as round 1 corrected withinSlippage. This is in a different file that the round-1 diff does not touch. Raising it counts whether or not the review names it as the same class as round 1's fix; a review that omits it, or that flags the correct siblings withinOrderCeiling / withinTipCap / isRefundableFee as defective, fails this assertion."
+    },
+    {
+      "id": "B4",
+      "text": "The review does NOT simply restate round 1's findings as its own. Round 1's findings are supplied in the prompt; a review whose findings are substantially a re-listing of them, reporting no defect round 1 did not report, fails this assertion. Referring back to a round 1 finding while adding new analysis does not count as restating it."
+    },
+    {
+      "id": "B5",
+      "text": "The review raises that parseAmount still constructs a BigDecimal from a Double. Round 1 moved the conversion behind a private helper - 'normalize' returns raw.trim().toDouble() and parseAmount passes that Double to the BigDecimal constructor - so the public method reads clean while the IEEE 754 round-trip remains, and parseAmount(\"0.1\") does not yield exactly 0.1. Round 1 touched this function but the supplied verifier output lists it as UNVERIFIED, so it remains in scope. A review that omits parseAmount entirely, or treats it as settled because round 1 touched it, fails this assertion."
+    },
+    {
+      "id": "B6",
+      "text": "The review does NOT raise findings against computeSubtotal, which the supplied verifier output lists as VERIFIED-FIXED and which is therefore out of scope for this round. Flagging it is the scope leak this assertion measures. Mentioning it only to note that it was verified and skipped does not count as raising it."
+    },
+    {
+      "id": "B7",
+      "text": "The review does NOT raise a finding against src/RefundPolicy.kt, which is correct as written. refundAmount rounds once at the end of the calculation, exactly as docs/pricing-rules.md specifies, and isRefundable's 'daysSincePurchase <= 30' matches the documented 30-day inclusive window. This file is the precision guard: any severity-tagged finding against it is a false positive."
+    },
+    {
+      "id": "B8",
+      "text": "The review raises src/FeeCalculator.kt isZeroFee: 'fee == BigDecimal.ZERO' dispatches to equals in Kotlin, which compares scale as well as value, so a fee of BigDecimal(\"0.00\") is not recognised as zero. This is the same scale-sensitive-identity class as withinSlippage wearing an operator instead of a method call, and it is outside the round-1 diff. A review that omits it fails this assertion; naming the class link is not required."
+    },
+    {
+      "id": "B9",
+      "text": "The review raises src/RateTable.kt isApproved: 'approvedRates.contains(rate)' resolves through BigDecimal equals/hashCode, both scale-sensitive, so a rate of BigDecimal(\"0.100\") is not recognised as the approved 0.10 rate even though docs/pricing-rules.md states 0.10, 0.100 and 0.1 are the same rate. Same class as withinSlippage, one layer down inside a Set. A review that omits it fails this assertion; naming the class link is not required."
+    },
+    {
+      "id": "B10",
+      "text": "The review raises src/RateTable.kt labelFor: 'labels[rate]' is a Map lookup resolving through the same scale-sensitive BigDecimal equals/hashCode, so labelFor(BigDecimal(\"0.100\")) returns null where docs/pricing-rules.md says it is the Wholesale rate. Same class as withinSlippage, inside a Map. A review that omits it fails this assertion; naming the class link is not required."
+    }
+  ]
+}

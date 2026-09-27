@@ -1,0 +1,35 @@
+{
+  "bundle_sha256": "b7f834cac8c7e458cd6d8583c5d88d97e601624b514bc0c146b9257a8321a3f0",
+  "checks": [
+    "checks.sh"
+  ],
+  "constraints": [
+    {
+      "except_under": ".vc-out",
+      "id": "writes-only-vc-out",
+      "tools": [
+        "Write",
+        "Edit",
+        "NotebookEdit"
+      ],
+      "type": "forbid_write_paths"
+    }
+  ],
+  "created": "2026-09-05T00:00:00Z",
+  "denylist": [],
+  "discrimination": {
+    "broken_pass_rate": 0.0,
+    "gate_broken_hard_exit": 1,
+    "gate_reference_exit": 0,
+    "reference_pass_rate": 1.0,
+    "verified_at": "2026-09-08T01:56:09.144790Z",
+    "verified_fixture_version": 3
+  },
+  "fixture_id": "review-round2-lens-rotation",
+  "fixture_version": 3,
+  "head_sha": "2480e930e70776474080efe65a5420d2a749e141",
+  "kind": "skill",
+  "last_verified": "2026-09-08T01:56:09.144790Z",
+  "prompt_file": "prompt.md",
+  "verified_claude_version": null
+}

@@ -1,0 +1,8 @@
+{
+  "eval_name": "dev-noop",
+  "runs_per_configuration": 1,
+  "run_summary": {
+    "candidate_a": {"runs": 1, "mean_pass_rate": 1.0},
+    "candidate_b": {"runs": 1, "mean_pass_rate": 0.5}
+  }
+}

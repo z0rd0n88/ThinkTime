@@ -1,0 +1,10 @@
+{
+  "configuration": "candidate_b",
+  "result": {
+    "pass_rate": 0.5,
+    "assertions": [
+      {"text": "OUTPUT.md exists at the repository root.", "passed": true, "evidence": "ls shows OUTPUT.md at worktree root"},
+      {"text": "OUTPUT.md contains exactly the single line 'dev-noop complete'.", "passed": false, "evidence": "file content compared byte-for-byte"}
+    ]
+  }
+}

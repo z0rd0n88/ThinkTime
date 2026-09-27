@@ -1,0 +1,78 @@
+From d1247989bbdbb0bed29129cebde7251774ad0d4d Mon Sep 17 00:00:00 2001
+From: versus-dev <dev@versus.invalid>
+Date: Sat, 5 Sep 2026 12:00:00 -0700
+Subject: [PATCH] reference: round-2 review that rotates lens, catches all four
+ class instances and the spec contradiction
+
+---
+ .vc-out/review.md | 58 +++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+ create mode 100644 .vc-out/review.md
+
+diff --git a/.vc-out/review.md b/.vc-out/review.md
+new file mode 100644
+index 0000000..d4b5b06
+--- /dev/null
++++ b/.vc-out/review.md
+@@ -0,0 +1,58 @@
++# Round 2 review - round-1 fix commit
++
++**Lens used: merged standards + spec, with a class hunt.** Round 1 ran a
++standards-only lens over `src/OrderPricing.kt`. This round reads
++`docs/pricing-rules.md` alongside the code, and hunts the *class* of each
++defect round 1 fixed across the whole of `src/` rather than re-checking the
++instance it fixed.
++
++Round 1's `withinSlippage` fix - `equals` to `compareTo` - is a hypothesis
++that BigDecimal is being compared by scale-sensitive identity elsewhere.
++Four further instances of that class survive, all outside the round-1 diff.
++
++## HIGH - src/OrderPricing.kt:26 - tier bounds now contradict the spec
++Round 1 changed the tier comparisons from `>=` to `>`. The worked examples in
++`docs/pricing-rules.md` give quantity 10 as Bulk (5%) and quantity 100 as
++Wholesale (10%). With `>`, an order of exactly 10 falls to Standard and an
++order of exactly 100 falls to Bulk - both boundary rows now disagree with the
++code. The comparisons should be `>=`.
++
++## HIGH - src/FeeCalculator.kt:14 - withinFeeCap compares by equals
++Same class as round 1's `withinSlippage` fix, left untouched because it is in
++another file. `fee.equals(cap)` compares scale as well as value, so the spec's
++worked example of value `0.1` against cap `0.10` - documented as within the
++cap - returns false. Use `compareTo`. Its siblings `withinOrderCeiling`,
++`withinTipCap` and `isRefundableFee` already do.
++
++## HIGH - src/FeeCalculator.kt:22 - isZeroFee compares with ==
++`fee == BigDecimal.ZERO` dispatches to `equals` in Kotlin, so a fee of
++`0.00` is not recognised as zero - `BigDecimal("0.00").equals(BigDecimal.ZERO)`
++is false because the scales differ. Same class as above, wearing an operator
++instead of a method call. Use `fee.compareTo(BigDecimal.ZERO) == 0`, or
++`signum() == 0`.
++
++## HIGH - src/RateTable.kt:16 - isApproved uses Set membership
++`approvedRates.contains(rate)` resolves through `equals`/`hashCode`, both
++scale-sensitive on BigDecimal. A rate of `0.100` is the same rate as `0.10`
++per docs/pricing-rules.md, and this returns false for it. Same class again,
++one layer down inside the collection. Compare with `compareTo` across the set,
++or normalise scale on entry.
++
++## HIGH - src/RateTable.kt:20 - labelFor uses Map lookup
++`labels[rate]` is the same `hashCode`/`equals` path as the Set above, so
++`labelFor(BigDecimal("0.100"))` returns null where the spec says it is the
++Wholesale rate. Same fix.
++
++## HIGH - src/OrderPricing.kt:18 - parseAmount still round-trips through Double
++Round 1 added trimming but moved the conversion into a private helper:
++`normalize` returns `raw.trim().toDouble()`, and `parseAmount` hands that
++Double to the BigDecimal constructor. The public method reads clean, but the
++IEEE 754 hop remains - `parseAmount("0.1")` yields
++0.1000000000000000055511151231257827. Touched by round 1 but not in the
++verified-fixed set, so still in scope. Use `BigDecimal(raw.trim())`.
++
++## Notes
++- `computeSubtotal` is in the verified-fixed set and outside this round's
++  scope; not reviewed.
++- `RefundPolicy` and the remaining comparisons in `FeeCalculator` and
++  `RateTable` were read and are correct.
+-- 
+2.43.0
+

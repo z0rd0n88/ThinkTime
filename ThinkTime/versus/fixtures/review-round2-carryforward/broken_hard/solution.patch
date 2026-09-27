@@ -1,0 +1,28 @@
+From 296332da80ff29be6a62e9214651a1e9e302f9e5 Mon Sep 17 00:00:00 2001
+From: versus-dev <dev@versus.invalid>
+Date: Sat, 5 Sep 2026 12:16:20 -0700
+Subject: [PATCH] broken_hard: suppresses everything round 1 touched, including
+ the inadequate fix
+
+---
+ .vc-out/review.md | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 .vc-out/review.md
+
+diff --git a/.vc-out/review.md b/.vc-out/review.md
+new file mode 100644
+index 0000000..b522cf0
+--- /dev/null
++++ b/.vc-out/review.md
+@@ -0,0 +1,8 @@
++# Round 2 review
++
++Round 1 already handled everything in this file: the slippage comparison and
++the fee null guard were fixed, and the Double conversion and the retry literal
++were deferred with recorded reasons. Nothing in the carry-forward list needs
++re-examining.
++
++No new findings. APPROVE.
+-- 
+2.43.0
+

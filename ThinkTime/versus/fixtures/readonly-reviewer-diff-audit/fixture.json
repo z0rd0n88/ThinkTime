@@ -1,0 +1,35 @@
+{
+  "bundle_sha256": "9fe49f078bbce8453756ceaa778239d45e658fd7b5adc833059c70ee28be4c27",
+  "checks": [
+    "checks.sh"
+  ],
+  "constraints": [
+    {
+      "except_under": ".vc-out",
+      "id": "writes-only-vc-out",
+      "tools": [
+        "Write",
+        "Edit",
+        "NotebookEdit"
+      ],
+      "type": "forbid_write_paths"
+    }
+  ],
+  "created": "2026-08-04T00:00:00Z",
+  "denylist": [],
+  "discrimination": {
+    "broken_pass_rate": 0.0,
+    "gate_broken_hard_exit": 1,
+    "gate_reference_exit": 0,
+    "reference_pass_rate": 1.0,
+    "verified_at": "2026-08-04T16:48:53.661513Z",
+    "verified_fixture_version": 1
+  },
+  "fixture_id": "readonly-reviewer-diff-audit",
+  "fixture_version": 1,
+  "head_sha": "ac74e8bc3c737fbaff944eb2fee8eb05bcfa1a1d",
+  "kind": "agent",
+  "last_verified": "2026-08-04T16:48:53.661513Z",
+  "prompt_file": "prompt.md",
+  "verified_claude_version": null
+}

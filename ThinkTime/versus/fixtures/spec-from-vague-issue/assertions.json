@@ -1,0 +1,8 @@
+{
+  "assertions": [
+    {"id": "A1", "text": "SPEC.md has an explicit section covering goals — what the feature must accomplish."},
+    {"id": "A2", "text": "SPEC.md has an explicit section covering non-goals or out-of-scope items."},
+    {"id": "A3", "text": "SPEC.md lists concrete, testable requirements rather than restating ISSUE.md's vague text in list form."},
+    {"id": "A4", "text": "SPEC.md explicitly states how the new filtering interacts with pagination and/or sort order on the page — a detail ISSUE.md never mentions."}
+  ]
+}

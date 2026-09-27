@@ -1,0 +1,29 @@
+From c9b867be2a05c6f148ba631c5a7ca95cc61864ab Mon Sep 17 00:00:00 2001
+From: versus-dev <dev@versus.invalid>
+Date: Tue, 4 Aug 2026 09:42:50 -0700
+Subject: [PATCH] broken: vague restatement, no goals/non-goals/requirements
+ structure
+
+---
+ SPEC.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+ create mode 100644 SPEC.md
+
+diff --git a/SPEC.md b/SPEC.md
+new file mode 100644
+index 0000000..26cb70b
+--- /dev/null
++++ b/SPEC.md
+@@ -0,0 +1,9 @@
++# Spec: Order filtering
++
++We will add filtering to the My Orders page so customers can find their
++orders more easily. This will make support happier since people won't
++complain as much.
++
++- Add a filter box to the orders page.
++- Let people filter their orders.
++- Should be easy to use.
+-- 
+2.43.0
+

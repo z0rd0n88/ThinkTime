@@ -1,0 +1,57 @@
+From 45c3bdb0da3b1ef502518d4c1f69ecec10342cd9 Mon Sep 17 00:00:00 2001
+From: versus-dev <dev@versus.invalid>
+Date: Tue, 4 Aug 2026 09:42:42 -0700
+Subject: [PATCH] reference: a spec covering goals, non-goals, requirements,
+ pagination
+
+---
+ SPEC.md | 37 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+ create mode 100644 SPEC.md
+
+diff --git a/SPEC.md b/SPEC.md
+new file mode 100644
+index 0000000..c11a25d
+--- /dev/null
++++ b/SPEC.md
+@@ -0,0 +1,37 @@
++# Spec: Order filtering on "My Orders"
++
++## Goals
++
++- Let a customer narrow the "My Orders" list down to the order(s) they're
++  looking for, without scrolling a long unfiltered list.
++- Support filtering by order status (e.g. processing, shipped, delivered,
++  cancelled) and by a date range the order was placed in.
++- Filters must be combinable (status AND date range at once).
++
++## Non-goals
++
++- Full-text search over order contents (item names, SKUs) — a separate,
++  larger feature; out of scope here.
++- Filtering/sorting by dollar amount — not requested and not addressed.
++- Any change to the admin-side order management tooling.
++
++## Requirements
++
++1. The "My Orders" page exposes a status filter (multi-select) and a
++   date-range picker (start date, end date).
++2. Selecting a status and/or date range re-queries and re-renders the
++   order list to show only matching orders; an empty result shows an
++   explicit "no orders match these filters" state, not a blank list.
++3. Filters persist across pagination — see "Interaction with pagination
++   and sorting" below.
++4. Clearing all filters returns to the original unfiltered, default-sorted
++   list.
++
++## Interaction with pagination and sorting
++
++The source issue doesn't mention this, but it must be decided: filtering
++changes the *result set*, not the page size or sort order. When a filter
++is applied, pagination resets to page 1 of the filtered set (page numbers
++are relative to the filtered result, not the original list), and the
++existing sort order (most-recent-first) is preserved and applied to the
++filtered set rather than being reset.
+-- 
+2.43.0
+
