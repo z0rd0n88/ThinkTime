@@ -17,7 +17,6 @@ The marketplace registers the consolidated `ThinkTime` plugin. Its skills run un
 |---|---|
 | `idea-nebula` | Generate, rank, and refine ideas. |
 | `idea-panel` | Explore a topic through multiple thinking lenses. |
-| `idea-refine` | Turn a rough idea into an actionable concept through structured divergent and convergent thinking. |
 | `i-cant-even` | Evaluate a design choice through distinct personas. |
 | `improve-me` | Audit Claude Code usage and propose evidence-based improvements. |
 | `swot-analysis` | Assess strengths, weaknesses, opportunities, and threats. |
