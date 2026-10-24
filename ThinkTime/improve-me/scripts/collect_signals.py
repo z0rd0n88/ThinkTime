@@ -32,7 +32,7 @@ DEFAULT_REPOS = [
     HOME / "BotHaus",
     HOME / "VistaMobileBE",
     HOME / "TradingBots",
-    HOME / "ClaudesMods",
+    HOME / "Z0rd0nZords",
 ]
 
 # --------------------------------------------------------------------------
