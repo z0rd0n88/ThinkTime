@@ -42,7 +42,7 @@ single mental model alone.
 
 ## 1. Purpose
 
-Generative sibling of `multi-agent-review`. Instead of a panel of *reviewers* finding faults in an existing artifact, this skill runs a panel of **thinking-skills mental-model lenses in parallel** to *generate* candidate ideas for a topic, then a synthesizer clusters, ranks, and de-duplicates them into one shortlist.
+Generative sibling of `zord-multi-agent-review`. Instead of a panel of *reviewers* finding faults in an existing artifact, this skill runs a panel of **thinking-skills mental-model lenses in parallel** to *generate* candidate ideas for a topic, then a synthesizer clusters, ranks, and de-duplicates them into one shortlist.
 
 The skill itself produces no ideas — it orchestrates lens agents and relays the synthesized output. Each lens is a distinct cognitive frame (first-principles, jobs-to-be-done, inversion, effectuation, …), so the same topic gets attacked from angles that a single pass would collapse into one.
 

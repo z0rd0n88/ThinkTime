@@ -1,6 +1,6 @@
 # ThinkTime
 
-Eight thinking and decision skills packaged as a Claude Code plugin: idea generation, panel thinking, design critique, SWOT analysis, option comparison, hackathon judging, and usage reflection.
+Seven thinking and decision skills packaged as a Claude Code plugin: idea generation, panel thinking, design critique, SWOT analysis, option comparison, hackathon judging, and usage reflection.
 
 ## Install
 
@@ -17,7 +17,6 @@ The marketplace registers the consolidated `ThinkTime` plugin. Its skills run un
 |---|---|
 | `idea-nebula` | Generate, rank, and refine ideas. |
 | `idea-panel` | Explore a topic through multiple thinking lenses. |
-| `idea-refine` | Turn a rough idea into an actionable concept through structured divergent and convergent thinking. |
 | `hackathon-judge` | Judge a hackathon idea against one event's rules: worth building, and would it win. |
 | `i-cant-even` | Evaluate a design choice through distinct personas. |
 | `improve-me` | Audit Claude Code usage and propose evidence-based improvements. |

@@ -2,7 +2,7 @@
 
 A parallel panel of thinking-skills mental-model lenses that *generates* candidate ideas for a topic, then a synthesizer clusters, ranks, and de-duplicates them into one shortlist.
 
-Generative sibling of [`multi-agent-review`](https://github.com/z0rd0n88/ClaudesMods/tree/main/ClaudesMods/multi-agent-review): instead of a panel of reviewers finding faults in an existing artifact, this panel of lenses attacks a topic from distinct cognitive frames (first-principles, jobs-to-be-done, inversion, effectuation, …) so the same problem space gets explored from angles a single pass would collapse into one.
+Generative sibling of [`zord-multi-agent-review`](https://github.com/z0rd0n88/Z0rd0nZords/tree/main/Z0rd0nZords/zord-multi-agent-review): instead of a panel of reviewers finding faults in an existing artifact, this panel of lenses attacks a topic from distinct cognitive frames (first-principles, jobs-to-be-done, inversion, effectuation, …) so the same problem space gets explored from angles a single pass would collapse into one.
 
 ## The skill
 

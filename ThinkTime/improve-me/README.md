@@ -66,5 +66,5 @@ rework rate into noise.
 
 `weekly-wrapup` reports activity; this reports conformance and friction.
 `drift-status-check` audits a project against its plan; this audits the operator
-against their own rules. For reviewing a diff, see `multi-agent-review` or
-`total-review`.
+against their own rules. For reviewing a diff, see `zord-multi-agent-review` or
+`zord-total-review`.
