@@ -1,7 +1,7 @@
 {
   "name": "ThinkTime",
-  "description": "Thinking and ideation skills for Claude Code: idea generation, panel thinking, design critique, SWOT analysis, comparisons, and usage reflection.",
-  "version": "1.2.1",
+  "description": "Thinking and ideation skills for Claude Code: idea generation, panel thinking, design critique, SWOT analysis, comparisons, hackathon judging, and usage reflection.",
+  "version": "1.3.0",
   "author": {
     "name": "z0rd0n88"
   },
@@ -14,7 +14,9 @@
     "brainstorming",
     "decision-making",
     "swot",
-    "comparison"
+    "comparison",
+    "hackathon",
+    "judging"
   ],
   "skills": [
     "./idea-nebula/skills",
@@ -22,7 +24,8 @@
     "./i-cant-even/skills",
     "./improve-me/skills",
     "./swot-analysis/skills",
-    "./versus/skills"
+    "./versus/skills",
+    "./hackathon-judge/skills"
   ],
   "commands": [
     "./idea-nebula/commands",
@@ -30,7 +33,8 @@
     "./i-cant-even/commands",
     "./improve-me/commands",
     "./swot-analysis/commands",
-    "./versus/commands"
+    "./versus/commands",
+    "./hackathon-judge/commands"
   ],
   "hooks": []
 }
