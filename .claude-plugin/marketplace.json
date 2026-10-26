@@ -7,14 +7,14 @@
   },
   "metadata": {
     "description": "Thinking and ideation skills, packaged as one Claude Code plugin.",
-    "version": "1.4.1"
+    "version": "1.4.2"
   },
   "plugins": [
     {
       "name": "ThinkTime",
       "source": "./ThinkTime",
       "description": "Eight skills for ideation, critique, strategic analysis, comparison, hackathon idea generation and judging, and usage reflection.",
-      "version": "1.4.1",
+      "version": "1.4.2",
       "author": {
         "name": "z0rd0n88"
       },
