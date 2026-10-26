@@ -140,7 +140,7 @@ Do NOT use for:
 - **Judging a candidate you already have**. That is `hackathon-judge`.
 - A non-event brainstorm. That is `idea-nebula`, which grounds on demand.
 - Quick single-pass ideation where speed beats diversity. Just answer directly.
-- Anything that writes to source files. This skill is read-only except for `--write-to`.
+- Anything that edits source files. This skill never modifies code or existing project files. The one file it writes is its own report, to the path `--write-to` names or the one the user approves in Stage 7.
 
 ## 3. Invocation grammar
 
