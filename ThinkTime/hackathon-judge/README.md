@@ -18,5 +18,6 @@ market evidence.
 - Skill: `skills/hackathon-judge/SKILL.md`
 - Command: `/ThinkTime:hackathon-judge [idea] + RULES AND CONSTRAINTS block`
 
-Use `idea-nebula` to generate candidate ideas first, and `swot-analysis` for
+Use `ThinkTime:idea-nebula` to generate candidate ideas first, and
+`ThinkTime:swot-analysis` for
 strategic positioning rather than event-scoped judging.
