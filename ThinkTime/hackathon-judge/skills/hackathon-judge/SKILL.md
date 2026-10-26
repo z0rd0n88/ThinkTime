@@ -1,7 +1,6 @@
 ---
 name: hackathon-judge
-description: 'Use when deciding whether to build an idea at a specific hackathon — scores "worth building" and "would it win" separately against the event rules, simulates the judging panel, and plans the build'
-version: 0.1.0
+description: 'Scores a hackathon idea against one event''s rules, answering "worth building" and "would it win" separately, then simulates the judges and plans the build. Use when asked to judge or score a hackathon idea, whether it would win a prize category, or what to build at a hackathon. Not for generating ideas (ThinkTime:idea-nebula).'
 ---
 
 # Hackathon Judge
