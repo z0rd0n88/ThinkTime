@@ -1,21 +1,25 @@
 ---
 name: hackathon-judge
 description: 'Use when deciding whether to build an idea at a specific hackathon — scores "worth building" and "would it win" separately against the event rules, simulates the judging panel, and plans the build'
+version: 0.1.0
 ---
 
 # Hackathon Judge
 
-## `-h` / `--help`
-
-If the argument text (trimmed, case-insensitive) is exactly `-h`, `--help`, or
-`help`, output only the block below and stop — run no other step.
+## Overview
 
 Judges one hackathon project idea against one specific event. Answers two
 separate questions: is this idea worth spending a hackathon on, and would it
-win. Use it after you have an idea and the event rules; use
+win. Use it once an idea and the event rules exist; use
 `ThinkTime:idea-nebula` to generate candidate ideas and
 `ThinkTime:swot-analysis` for strategic positioning rather
 than event-scoped judging.
+
+## `-h` / `--help`
+
+If the argument text (trimmed, case-insensitive) is exactly `-h`, `--help`, or
+`help`, output the Overview above and the option table below, then stop — run
+no other step.
 
 | Option | Values | Default | Effect |
 |---|---|---|---|
@@ -39,7 +43,7 @@ are missing, and stop. An explicit "none" satisfies a required field; only a bla
 one stops the run.
 
 The block may come from the arguments or from earlier in this conversation;
-quote the block you are using. If the idea is missing, or is a path that
+quote the block in use. If the idea is missing, or is a path that
 cannot be read, say so and stop — including when the whole argument is a bare
 flag.
 
@@ -62,8 +66,8 @@ evidence gap — never silently filled.
 
 ## What a typical hackathon involves
 
-Reason from this baseline only where the rules are silent, and say when you
-are doing so.
+Reason from this baseline only where the rules are silent, and say when the
+baseline supplied the value.
 
 - **Duration:** 24–48 hours of wall clock, of which 12–20 are productive
   build time after travel, team formation, meals, and sleep.
@@ -93,8 +97,8 @@ This paragraph applies always, not only where the rules are silent.
 
 ## Evidence standard
 
-**Default posture is closed-world:** use only the idea, the rules, and your
-own knowledge. Label knowledge-based claims as unverified. Live facts — current
+**Default posture is closed-world:** use only the idea, the rules, and
+recalled knowledge. Label knowledge-based claims as unverified. Live facts — current
 rate limits, waitlist status, what sample apps exist today — are recorded as
 evidence gaps. Scores may rest on unverified knowledge; verdicts may not be
 gated on it. `--research` lifts this and authorises external checking.
@@ -102,8 +106,8 @@ gated on it. `--research` lifts this and authorises external checking.
 Every finding and every score must cite build-feasibility evidence, not market
 evidence. Admissible evidence:
 
-- **Prior art:** does this exist as a sample app, template, or previous
-  hackathon winner you can name? Prior art cuts both ways — it makes the build
+- **Prior art:** does this exist as a sample app, template, or nameable
+  previous hackathon winner? Prior art cuts both ways — it makes the build
   easier and the idea less distinctive. Report both effects, naming the rubric
   criteria they land on, or as findings outside the score where the rubric has
   no home for them.
@@ -139,7 +143,7 @@ Build the rubric before scoring and state where it came from.
    distribute weights equally, and label the weights as this skill's
    assumption.
 3. **If it publishes neither**, build one from the six criteria below, state
-   the weights you chose and why, and keep them visible in the output.
+   the chosen weights and the reason, and keep them visible in the output.
 
 **Scale, whatever the source.** Every criterion is scored 1–5: 1 fails
 outright, 3 passes without impressing, 5 is best in the room. Weights are
@@ -171,7 +175,7 @@ Criteria and their weights stay exactly as the rubric source gave them.
 
 Reshape first, then redistribute a dropped judge's weight proportionally
 across the survivors. `--category` overrides the block's targeted-category
-field; say which source you used, and state the reshaping explicitly.
+field; name the source used, and state the reshaping explicitly.
 
 ## The judging panel
 
@@ -290,7 +294,7 @@ the findings **before** writing item 1. In this order:
    submission requirements as their own blocks and the **escape-hatch decision
    point** marked at the wall-clock hour by which 25% of the plan's productive
    build time is still unspent, and never later than 3 wall-clock hours before
-   submission. State both the productive-hours figure you used and the hour.
+   submission. State both the productive-hours figure applied and the hour.
 
 Do not soften a finding to approve an idea or sharpen one to look decisive.
 Where the rules were silent and the typical-hackathon baseline was used
