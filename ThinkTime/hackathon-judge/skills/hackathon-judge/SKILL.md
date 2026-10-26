@@ -65,24 +65,10 @@ evidence gap — never silently filled.
 
 ## What a typical hackathon involves
 
-Reason from this baseline only where the rules are silent, and say when the
-baseline supplied the value.
-
-- **Duration:** 24–48 hours of wall clock, of which 12–20 are productive
-  build time after travel, team formation, meals, and sleep.
-- **Team:** 1–4 people. Assume the stated team only; no reinforcements.
-- **Judging format:** a 2–5 minute live demo plus Q&A, or a science-fair
-  table round where judges spend 2–3 minutes per project. Judges see 20–60
-  projects and remember a handful.
-- **"Done" on stage:** a working path through one scenario, run live or from
-  a recorded fallback, that a non-expert recognises as valuable within 30
-  seconds.
-- **Standard failure modes:** over-scoping (the whole product instead of one
-  path); integration hell (an unfamiliar API, auth, or deploy step eating a
-  third of the clock); demo-day flakiness (venue wifi, rate limits, cold
-  starts, a live model call); pre-work disqualification (committing code
-  before the start, or reusing an existing project beyond what the rules
-  allow); and submission misses (no video, late repo, missing sponsor tech).
+Read [references/hackathon-baseline.md](references/hackathon-baseline.md) for
+typical durations, team sizes, judging formats, what "done" means on stage,
+and the standard failure modes. Reason from that baseline only where the
+rules are silent, and say when the baseline supplied the value.
 
 ## The builder
 
