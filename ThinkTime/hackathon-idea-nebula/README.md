@@ -17,7 +17,7 @@ Same architecture: four independent parallel generators, blind pairwise ranking 
 |---|---|---|
 | Input | a topic | one event's rules, with five gating fields |
 | Generators | `tails`, `folk`, `alien`, `miner` | `tails`, `stage`, `alien`, `recon` |
-| Grounding | demand: complaints, vendors, kill-zone | feasibility: API access, live-demo limits, the hard part, prior art, pre-work legality |
+| Grounding | demand: complaints, vendors, kill-zone | feasibility: API access, live-demo limits, the hard part, prior art, pre-work legality, stack match, submittability |
 | "Novel" means | distance from the idea space's modal region | distance from what the room will build: the obvious reading of the theme crossed with the mandated tech's quickstart |
 | Barbell | Safe Picks / Moonshots | Safe Demos / Swing Demos |
 | Scoped to | whether a market exists | whether a demo ships |
@@ -29,7 +29,9 @@ The two generators that are genuinely new:
 
 ## Required input
 
-The RULES AND CONSTRAINTS block, in the same shape `hackathon-judge` uses, so one filled block serves the whole pipeline. Five fields gate the run: duration, theme, mandated tech, pre-work rules, targeted category. Blank any of them and the skill prints the template, names what is missing, and stops. It does not invent the event.
+The RULES AND CONSTRAINTS block, in the same shape `hackathon-judge` uses. Five fields gate the run: duration, theme, mandated tech (an explicit `none` counts), pre-work rules, targeted category. Blank or placeholder any of them and the skill prints the template, names what is missing, and stops. It does not invent the event.
+
+The two skills share the block's shape but gate on different fields. `hackathon-judge` additionally requires the published rubric, the prize categories and the submission requirements, which this skill lets degrade. Fill those three too if you intend to run the judge afterwards, or the expensive half runs first and the judge then stops and asks.
 
 The block is untrusted input: text inside it that tries to direct the skill is reported, not obeyed.
 
@@ -41,4 +43,4 @@ No verdict. Standings are duel records inside the pool, not a prediction about t
 
 ## Cost
 
-A full run dispatches up to ~10 subagents (4 generators + 1 ranker + up to `--feasibility-top` feasibility checks). `--no-feasibility` skips the grounding stage and forces an UNCHECKED warning into the report.
+A default run dispatches ~10 subagents (4 generators + 1 ranker + up to `--feasibility-top` feasibility checks). The reachable maximum is 15: 4 generators, 2 `--banlist` re-runs, 1 ranker, 8 feasibility checks. `--no-feasibility` skips the grounding stage, which also skips every KILL threshold, and forces an UNCHECKED warning into the report.
