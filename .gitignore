@@ -8,3 +8,7 @@ build/
 dist/
 *.egg-info/
 signals.json
+
+# Review reports are working artifacts, not repo artifacts: the review is
+# commented on the PR, and committing a report file is a rare, explicit choice.
+docs/reviews/
