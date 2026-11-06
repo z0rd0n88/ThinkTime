@@ -53,6 +53,6 @@ SAVE      offers to write the report to a file (default
 ## Install
 
 ```
-claude plugin marketplace add z0rd0n88/ThinkTime
+claude plugin marketplace add z0rd0n88/think-time
 claude plugin install ThinkTime@thinktime
 ```

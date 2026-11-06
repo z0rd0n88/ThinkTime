@@ -78,7 +78,7 @@ Matt Pocock's `grill-me` skill is interview-only — it stress-tests your plan v
 ## Install
 
 ```bash
-claude plugin marketplace add z0rd0n88/ThinkTime
+claude plugin marketplace add z0rd0n88/think-time
 claude plugin install ThinkTime@thinktime
 ```
 

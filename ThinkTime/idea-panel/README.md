@@ -22,7 +22,7 @@ Any `thinking-<name>` slug can be swapped in via `--lenses`, and named specialis
 ## Install
 
 ```bash
-claude plugin marketplace add z0rd0n88/ThinkTime
+claude plugin marketplace add z0rd0n88/think-time
 claude plugin install ThinkTime@thinktime
 ```
 
