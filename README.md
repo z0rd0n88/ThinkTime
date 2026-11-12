@@ -200,7 +200,7 @@ Each skill's own README has the full flag reference.
 ├── AGENTS.md                           # repository rules for contributors and agents
 └── ThinkTime/                          # the plugin
     ├── .claude-plugin/plugin.json      # sole plugin manifest; explicit skill/command arrays
-    ├── idea-nebula/                    # each skill: README, commands/, skills/<name>/SKILL.md
+    ├── idea-nebula/                    # each skill: README, skills/<name>/SKILL.md
     │   └── skills/idea-nebula/references/   # briefs loaded only at run time
     ├── idea-panel/
     ├── hackathon-idea-nebula/
@@ -223,7 +223,7 @@ Each skill keeps its `SKILL.md` as a thin orchestration contract. Agent briefs, 
 ## Development
 
 - **One plugin, one marketplace.** The repository root is the marketplace (`thinktime`), and `ThinkTime/` is the only plugin. The marketplace entry name and the manifest name must both stay `ThinkTime`.
-- **Adding a skill.** Create `ThinkTime/<slug>/` with `skills/` and `commands/`, then register both directories in the explicit `skills` and `commands` arrays of `ThinkTime/.claude-plugin/plugin.json`. Runtime paths use `${CLAUDE_PLUGIN_ROOT}`.
+- **Adding a skill.** Create `ThinkTime/<slug>/` with `skills/<slug>/SKILL.md`, then register that directory in the explicit `skills` array of `ThinkTime/.claude-plugin/plugin.json`. Put the usage hint in the frontmatter `argument-hint`. Do not add a `commands/<slug>.md` wrapper with the skill's name: it shadows the skill (#4); only `versus` keeps a differently named wrapper. Runtime paths use `${CLAUDE_PLUGIN_ROOT}`.
 - **Releasing.** Bump `version` in **both** `ThinkTime/.claude-plugin/plugin.json` and the plugin entry (and `metadata.version`) in `.claude-plugin/marketplace.json` for every shipped change. Both are currently `1.4.2`.
 - **Workflow.** Every tracked change goes through a feature branch and a pull request.
 - **Tests.** The `versus` harness has a stdlib-only runtime. pytest is the only test dependency:

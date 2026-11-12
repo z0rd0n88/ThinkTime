@@ -1,6 +1,7 @@
 ---
 name: improve-me
 description: Use when asking where your own Claude Code usage falls short of best practice, what you could be doing better, or which harness/config changes to make. Not for reviewing a codebase or a diff.
+argument-hint: "[--days N]"
 allowed-tools:
   - Read
   - Glob

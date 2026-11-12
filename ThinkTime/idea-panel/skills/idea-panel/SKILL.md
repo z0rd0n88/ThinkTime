@@ -1,6 +1,7 @@
 ---
 name: idea-panel
 description: Run a parallel panel of thinking-skills mental-model lenses over a topic to generate fresh ideas, then synthesize and rank them. Use when brainstorming new products, business directions, research angles, or creative options.
+argument-hint: "<topic...> [--lenses <csv>] [--panel-size <n>] [--context <path>] [--write-to <path>] [--no-write]"
 allowed-tools:
   - Bash
   - Read

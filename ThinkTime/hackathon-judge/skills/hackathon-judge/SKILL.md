@@ -1,6 +1,7 @@
 ---
 name: hackathon-judge
 description: 'Scores a hackathon idea against one event''s rules, answering "worth building" and "would it win" separately, then simulates the judges and plans the build. Use when asked to judge or score a hackathon idea, whether it would win a prize category, or what to build at a hackathon. Not for generating ideas (ThinkTime:idea-nebula).'
+argument-hint: "[idea — text or file path] + a filled RULES AND CONSTRAINTS block [--category NAME] [--research]"
 ---
 
 # Hackathon Judge

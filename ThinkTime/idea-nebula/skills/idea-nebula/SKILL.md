@@ -1,6 +1,7 @@
 ---
 name: idea-nebula
 description: 'Use when brainstorming new products, features, or business directions that need paying users, and a single-pass idea dump would only surface the obvious.'
+argument-hint: "<topic...> [--founder <desc>] [--context <path>] [--wild <n>] [--banlist] [--no-demand] [--demand-top <n>] [--plain] [--write-to <path>] [--force]"
 allowed-tools:
   - Bash(mkdir:*)
   - Bash(gh search:*)

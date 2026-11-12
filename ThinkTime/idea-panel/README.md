@@ -54,8 +54,6 @@ The natural follow-on pipeline once a shortlist exists:
 idea-panel/
 ├── .claude-plugin/plugin.json
 ├── README.md
-├── commands/
-│   └── idea-panel.md
 └── skills/
     └── idea-panel/
         ├── SKILL.md

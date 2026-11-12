@@ -88,8 +88,6 @@ claude plugin install ThinkTime@thinktime
 i-cant-even/
 ├── .claude-plugin/plugin.json
 ├── README.md
-├── commands/
-│   └── i-cant-even.md
 └── skills/
     └── i-cant-even/
         ├── SKILL.md
