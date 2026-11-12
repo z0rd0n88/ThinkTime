@@ -30,11 +30,15 @@ product success and competitive positioning.
 Gather what is available before analyzing; note explicitly what is missing
 rather than inventing it.
 
+- Decision to inform, time horizon, and alternatives under consideration
 - Product description and current state
 - Competitive landscape and market context
 - Company capabilities, resources, and constraints
 - Market trends and industry dynamics
 - Customer feedback or usage data (optional)
+
+For material claims, identify the source and date when available. Distinguish
+observed facts, estimates, and assumptions; flag disputed or missing evidence.
 
 ## The four quadrants
 
@@ -88,49 +92,57 @@ What external factors could have a negative impact?
 
 ## Steps
 
-1. **Identify 5–7 strengths.** Be honest about which are genuine competitive
-   advantages versus table stakes every competitor also has. Completion
-   criterion: each entry names a specific advantage, not a generic virtue.
+1. **Identify material strengths.** Distinguish genuine advantages from table
+   stakes shared by competitors. Each entry should name a specific capability
+   and the alternative it is strong against; do not fill a quota.
 
-2. **List 5–7 weaknesses.** Do not minimize; focus on addressable gaps.
-   Completion criterion: each entry is something the team could act on or must
-   plan around, not a vague worry.
+2. **Identify material weaknesses.** Focus on gaps the team could address or
+   must plan around. Missing input is an analysis gap, not automatically a
+   weakness of the subject. Leave a quadrant sparse if the evidence is sparse.
 
-3. **Map 5–7 opportunities**, prioritized by market size and alignment with
-   existing strengths.
+3. **Map material opportunities.** Assess relevance to the decision and
+   feasibility. Use market size or strength alignment where supported, and
+   mark unknowns instead of inventing figures.
 
-4. **Flag 5–7 threats**, each with an assessed probability and impact.
+4. **Flag material threats.** Describe likelihood and consequence where there
+   is a basis to assess them; otherwise mark them unknown. Do not turn rough
+   ratings into a numerical ranking without a justified method.
 
-5. **Cross-reference the quadrants** for strategic insight — this is where the
-   value is, not in the four lists themselves:
-   - How do we leverage strengths to capture opportunities? (SO)
-   - How do we shore up weaknesses to mitigate threats? (WT)
-   - Which opportunities can overcome weaknesses? (WO)
-   - Which threats could exploit weaknesses? (ST)
+5. **Cross-reference the quadrants** to generate strategic options. Make a
+   pairing only when both factors have support; otherwise mark it unavailable.
+   Treat each option as a hypothesis, not proof that it will work:
+   - How could strengths help capture opportunities? (SO)
+   - How could opportunities help overcome weaknesses? (WO)
+   - How could strengths help counter threats? (ST)
+   - How could weaknesses be reduced to limit exposure to threats? (WT)
 
-6. **Develop 3–5 strategic recommendations**, each traceable to a specific
-   cross-quadrant pairing from step 5.
+6. **Develop recommendations only where warranted.** Trace each strategic
+   recommendation to specific factors and a valid pairing from step 5; state
+   what would test or change it. List research needed to fill evidence gaps
+   separately from strategic recommendations.
 
-7. **Prioritize actions and name owners.**
+7. **Prioritize actions.** Name an owner if known, or identify who must decide.
 
-8. **Identify metrics** to track progress on each recommendation.
+8. **Identify a measurable check** for each recommendation where meaningful.
 
 ## Strategic applications
 
 | Posture | When it applies |
 |---|---|
-| **Build** | Strong strengths meeting real opportunities — double down |
-| **Defend** | Weaknesses exposed to live threats — fortify and mitigate |
-| **Pivot** | An opportunity that changes the competitive dynamic outright |
-| **Exit** | Too many threats against a weak competitive position |
+| **Build** | Consider investing where supported strengths meet credible opportunities |
+| **Defend** | Consider reducing exposure where credible threats meet material weaknesses |
+| **Pivot** | Consider changing direction when a better option is supported by evidence |
+| **Exit** | Consider withdrawal only after comparing alternatives, costs, and evidence |
 
 ## Notes
 
-- SWOT reads internal first, then external.
+- The quadrants organize the analysis; their order does not determine the decision.
 - Context matters: compare against competitors and industry standards, not
   against an abstract ideal.
-- Update the SWOT quarterly, or whenever market conditions shift.
-- Feed the result into roadmap, partnership, and resource-allocation decisions.
+- Revisit the analysis when material assumptions, capabilities, competitors, or
+  market conditions change. Choose any calendar cadence for an explicit reason.
+- Use the result as input to roadmap, partnership, and resource-allocation
+  decisions; the matrix itself does not validate an action.
 - Opportunities and threats should cover both current and emerging dynamics.
 
 ## Common mistakes
