@@ -30,6 +30,13 @@ from run_comparison import ComparisonRefused, run_comparison  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DEV_NOOP = REPO_ROOT / "dev" / "fixtures" / "dev-noop"
+
+
+def _dev_noop_or_skip() -> Path:
+    """Same guard as test_verify_fixture.py: the fixture is not in every checkout."""
+    if not DEV_NOOP.is_dir():
+        pytest.skip("dev-noop fixture not present in this checkout")
+    return DEV_NOOP
 DEV_NOOP_ASSERTION_IDS = ["A1", "A2", "A3"]
 
 DEV_ENV = {
@@ -86,7 +93,7 @@ def run_args(a, b, ws, extra=()):
             str(a),
             str(b),
             "--fixture",
-            str(DEV_NOOP),
+            str(_dev_noop_or_skip()),
             "--unverified-fixture",
             "--quick",
             "--workspace",
@@ -210,7 +217,7 @@ class TestUnverifiedGate:
                 str(a),
                 str(b),
                 "--fixture",
-                str(DEV_NOOP),
+                str(_dev_noop_or_skip()),
                 "--quick",
                 "--workspace",
                 str(tmp_path / "ws"),
