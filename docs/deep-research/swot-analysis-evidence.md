@@ -1,0 +1,55 @@
+# Evidence review: ThinkTime `swot-analysis`
+
+Date: 2026-09-27. Scope: the instructions in `ThinkTime/swot-analysis/skills/swot-analysis/SKILL.md` only.
+
+## Decision
+
+Keep SWOT/TOWS as a way to organize factors and generate options, while making its evidence and uncertainty visible. Remove numerical item and recommendation quotas, the prescribed quarterly refresh, and the prescribed internal-first order. Correct the ST pairing. Treat postures and recommendations as options to test, not conclusions proven by the matrix. The evidence reviewed does **not** establish that using SWOT improves decision quality or organizational performance.
+
+## Method and limits
+
+This review adapts Idea Autopsy's distinction between source support, external verification, evidence confidence, and recommendation strength, and its practice of recording limitations and validation separately ([PR #10](https://github.com/z0rd0n88/idea-autopsy/pull/10), [PR #11](https://github.com/z0rd0n88/idea-autopsy/pull/11), [scholarly review](https://github.com/z0rd0n88/idea-autopsy/blob/main/docs/research/2026-09-22-scholarly-review-of-proposal-evaluation.md), [validation notes](https://github.com/z0rd0n88/idea-autopsy/blob/main/docs/evaluation-validation.md)). It is a bounded literature review, not a systematic review or an outcome evaluation of this skill.
+
+The three starting searches were run verbatim:
+
+1. `SWOT analysis empirical study strategic planning usefulness weaknesses Hill Westbrook 1997 primary research`
+2. `SWOT analysis TOWS matrix Weihrich 1982 original paper`
+3. `SWOT analysis organizational performance empirical systematic evidence strategy formulation primary study`
+
+Follow-up searches traced citations to the original Weihrich and Hill/Westbrook papers and sought conflicting evidence on SWOT effectiveness, planning outcomes, factor quotas, refresh frequency, and risk ratings. The `ClaudesMods:deep-research` workflow was used for the research stage (run `wf_8999265b-545`); its synthesis covered 15 fetched sources and 25 claims, with five claims left unverified and 21 candidate sources not fetched. Its output was checked against accessible primary texts before this report was written. In particular, its risk-matrix conclusion was narrowed: a critique of *matrix-based ranking* is not direct evidence against recording separate qualitative likelihood and impact judgments.
+
+The directly relevant empirical evidence located here is limited. Hill and Westbrook observed use of SWOT in a particular sample and era; Weihrich proposed a conceptual method. Neither is a controlled comparison of this skill against another decision process. Search coverage and source access are incomplete, so “no directly relevant test found” is not “no such test exists.”
+
+## Claim-to-evidence table
+
+| Skill instruction or implication | Evidence and classification | Revision consequence |
+|---|---|---|
+| Four internal/external, positive/negative quadrants organize factors | [Weihrich (1982)](#sources) defines the TOWS dimensions as a conceptual framework. [Hill and Westbrook (1997)](#sources) observed category confusion and weak use of output in practice. **Conceptual support; no demonstrated outcome benefit.** | Retain the organizing structure. Require specific, decision-relevant factors and distinguish sourced facts from assumptions. |
+| Identify **5–7** items in *each* quadrant | No primary study found that tests this count or compares it to shorter, longer, or unconstrained lists. Hill and Westbrook observed long, vague lists as a failure mode; their result does not establish an optimum count. **Unsupported heuristic, with a relevant caution.** | Remove quota. Include only material factors; leave a quadrant sparse when evidence is sparse. |
+| Prioritize opportunities by market size and strength alignment | Alignment is part of Weihrich's option-generation logic. No SWOT-specific study found validating this ranking rule. Market size is not interchangeable with reachable value or feasibility. **Useful but untested heuristic.** | Consider relevance, feasibility, and sourced market information; label unknown sizes. Do not let a made-up size determine rank. |
+| Give every threat assessed probability and impact | No SWOT-specific validation found for mandatory ratings. Explicit likelihood and consequence can expose assumptions, but forced precision may mislead. [Cox (2008)](#sources) demonstrates possible failures of *ordinal risk matrices used for ranking and resource allocation*, including rank reversal and range compression; it does **not** directly refute separate qualitative annotations. **Untested heuristic; conditional conflicting evidence if ratings become a matrix score.** | Describe likelihood and consequence only when defensible; otherwise mark unknown. Do not calculate or rank by a simplistic matrix score. |
+| Derive SO, WO, ST, and WT options from cross-quadrant pairings | [Weihrich (1982)](#sources) introduced these pairings as a strategy-generation framework. No comparative outcome test of the pairings was found in this bounded search. The current ST question repeats WT; ST should ask how strengths counter threats. **Conceptual support, not demonstrated efficacy.** | Keep all four pairings, correct ST, and describe resulting options as hypotheses. |
+| Produce **3–5** recommendations, each traced to a pairing | Traceability is a sensible audit aid and addresses Hill and Westbrook's finding that lists often failed to inform subsequent strategy. Neither the count nor traceability's effect on outcomes was tested in the sources reviewed. **Useful but untested process design; count unsupported.** | Give only warranted recommendations; show factor links, evidence gaps, and a decision or test for each. |
+| Prioritize actions, name owners, and identify metrics | Actionability is an intended use of strategic analysis, but these exact requirements lack direct SWOT-specific validation here. Invented owners or metrics can create false certainty. **Useful but untested heuristic.** | Name an owner when known; otherwise identify the decision owner needed. Use a measurable check where meaningful. |
+| Choose Build, Defend, Pivot, or Exit from quadrant patterns | These labels are not tested decision rules in the reviewed studies. An “Exit” conclusion based on counts alone would exceed the evidence. **Unsupported as automatic verdicts.** | Present postures as possible interpretations that require comparison with alternatives, costs, and evidence. |
+| Read internal factors first | [Weihrich (1982)](#sources) presents an illustrative process that begins with external opportunities and threats and says its steps may vary. **Conflicting source evidence against a mandatory order.** | Remove the ordering rule. |
+| Refresh **quarterly** | Weihrich discusses changing environments and analyses at different points in time, but gives no tested quarterly interval. **Unsupported cadence; event-driven refresh is a plausible untested heuristic.** | Revisit when material assumptions, capabilities, competitors, or conditions change; choose a calendar only for a stated operational reason. |
+| SWOT improves strategy because strategic planning improves performance | [George et al. (2019)](#sources) report a positive association across studies of *strategic planning generally*. SWOT was not isolated. **Indirect evidence only; cannot support a SWOT-specific causal claim.** | Make no efficacy claim for this skill. Validate it separately before making one. |
+
+## Sources
+
+1. Weihrich, H. (1982). “The TOWS Matrix—A Tool for Situational Analysis.” *Long Range Planning*, 15(2), 54–66. [Original paper PDF](https://elearning15.unibg.it/pluginfile.php/644921/mod_folder/content/0/STR%20T06%20Weihrich_1982_LRP.pdf). DOI: `10.1016/0024-6301(82)90120-0`. **Limit:** method proposal and illustrations, not a controlled effectiveness study.
+2. Hill, T., & Westbrook, R. (1997). “SWOT Analysis: It’s Time for a Product Recall.” *Long Range Planning*, 30(1), 46–52. [Original paper PDF](https://ftms.edu.my/images/Document/MOD001074%20-%20Strategic%20Management%20Analysis/WK6_SR_MOD001074_Hill_Westbrook_1997.pdf). DOI: `10.1016/S0024-6301(96)00095-7`. **Limit:** observations of SWOT use in 20 UK manufacturing companies in the 1990s; the observed failures do not prove a particular remedy works elsewhere. This is distinct from the authors' seven-project *European Management Journal* paper on manufacturing strategy.
+3. Cox, L. A. Jr. (2008). “What’s Wrong with Risk Matrices?” *Risk Analysis*, 28(2), 497–512. [Paper record and abstract](https://ideas.repec.org/a/wly/riskan/v28y2008i2p497-512.html). DOI: `10.1111/j.1539-6924.2008.01030.x`. **Limit:** formal analysis of risk matrices, not of SWOT or of uncoded qualitative likelihood and impact notes.
+4. George, B., Walker, R. M., & Monster, J. (2019). “Does Strategic Planning Improve Organizational Performance? A Meta-Analysis.” *Public Administration Review*, 79(6), 810–819. [Original article PDF](https://repub.eur.nl/pub/120708/Repub_120708_O-A.pdf). DOI: `10.1111/puar.13104`. **Limit:** broad strategic planning research, with heterogeneity and publication-bias considerations; it does not identify SWOT's incremental effect.
+
+## Validation still needed for an efficacy claim
+
+The skill revision can be checked mechanically for structure, links, and removal of unsupported mandates. That will show only that the instructions changed as intended. A performance claim would require a separate comparison on held-out decisions or realistic cases, with the same inputs for old and revised versions, blinded domain review, and measures such as factual accuracy, specificity, option quality, traceability, calibration of uncertainty, and whether decision makers actually use the result. Record adverse as well as favorable results; do not infer organizational performance from a well-formatted SWOT.
+
+## Checks on this revision
+
+- `claude plugin validate .` and `claude plugin validate ThinkTime` passed. Both report the existing mixed-case `ThinkTime` name warning; this change does not alter the manifest.
+- All eight external links in this report returned HTTP 200 on 2026-09-27. The cited DOI strings are bibliographic identifiers; the accessible full-text or record links are provided alongside them.
+- A structural check confirmed all four pairings, corrected ST wording, and removal of the fixed counts and quarterly mandate from both the skill and its command wrapper.
+- A single synthetic smoke case supplied 20 paying customers and 5% monthly churn, but no evidence about a proposed new industry. The first invocation exposed a failure: the model produced a WT option without a supported external threat. After adding the explicit two-factor rule, the second invocation marked all four pairings unavailable and listed research needs separately. It still extrapolated churn from sparse input, illustrating that one successful structural behavior does not validate the factual quality of the output.
