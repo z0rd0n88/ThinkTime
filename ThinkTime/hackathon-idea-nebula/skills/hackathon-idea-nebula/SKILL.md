@@ -1,6 +1,7 @@
 ---
 name: hackathon-idea-nebula
 description: "Use when you have a hackathon to enter and no idea yet. Generates candidates against that event's rules from four entropy sources, checks buildability and prior art, shortlists Safe and Swing demos."
+argument-hint: "[optional focus text] + a filled RULES AND CONSTRAINTS block"
 allowed-tools:
   - Bash(mkdir:*)
   - Bash(wc:*)

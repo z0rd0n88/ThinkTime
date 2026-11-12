@@ -1,6 +1,7 @@
 ---
 name: swot-analysis
 description: 'Use when strategically assessing a product, business, or competitive position — produces a full SWOT plus cross-quadrant strategy and prioritized recommendations'
+argument-hint: "[product, business, or market position — text or file path]"
 ---
 
 # SWOT Analysis

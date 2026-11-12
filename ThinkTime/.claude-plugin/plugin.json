@@ -30,15 +30,7 @@
     "./hackathon-judge/skills"
   ],
   "commands": [
-    "./idea-nebula/commands",
-    "./idea-nebula-product/commands",
-    "./idea-panel/commands",
-    "./i-cant-even/commands",
-    "./improve-me/commands",
-    "./swot-analysis/commands",
-    "./versus/commands",
-    "./hackathon-idea-nebula/commands",
-    "./hackathon-judge/commands"
+    "./versus/commands"
   ],
   "hooks": []
 }

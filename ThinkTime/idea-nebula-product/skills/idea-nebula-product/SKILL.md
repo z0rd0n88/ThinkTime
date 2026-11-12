@@ -1,6 +1,7 @@
 ---
 name: idea-nebula-product
 description: 'Use when brainstorming side projects, open-source tools, free apps, or features judged on usability, originality, and usefulness to users rather than profit. Not for ideas that must make money.'
+argument-hint: "<topic...> [--context <path>] [--wild <n>] [--banlist] [--no-check] [--check-top <n>] [--plain] [--write-to <path>] [--force]"
 allowed-tools:
   - Bash(mkdir:*)
   - Bash(gh search:*)

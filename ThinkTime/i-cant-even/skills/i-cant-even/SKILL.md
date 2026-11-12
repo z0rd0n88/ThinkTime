@@ -1,6 +1,7 @@
 ---
 name: i-cant-even
 description: 'User-invoked only; run when the user types `/ThinkTime:i-cant-even` or says "i cant even". Evaluates a design choice in project context and gives a recommendation with trade-offs.'
+argument-hint: "[brief description of the design question]"
 allowed-tools:
   - Bash
   - Read
