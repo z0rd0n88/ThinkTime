@@ -13,7 +13,7 @@ The product-first sibling of [`idea-nebula`](../idea-nebula/README.md). Same evi
 | Validate with fake doors, pre-sales, LOIs | Test with a prototype in front of 5 target users, or a Wizard-of-Oz version |
 | `--founder` | removed — who builds it is not scored |
 
-Every matrix cell is a round-robin duel record (W-D-L) judged in both presentation orders, never a 1–10 score. Each axis has its own judge so one overall impression can't inflate all three columns.
+Every matrix cell is a round-robin duel record (W-D-L) judged in both presentation orders, never a 1–10 score. Each axis has its own judge which reduces how much one overall impression inflates all three columns (same model, so it doesn't remove it).
 
 ## Usage
 
