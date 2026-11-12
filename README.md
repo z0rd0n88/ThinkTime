@@ -5,12 +5,12 @@
 [![Version](https://img.shields.io/badge/version-1.4.2-blue)](.claude-plugin/marketplace.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code plugin](https://img.shields.io/badge/Claude_Code-plugin-D97757)](https://github.com/z0rd0n88/think-time)
-[![Skills](https://img.shields.io/badge/skills-8-informational)](#skills)
+[![Skills](https://img.shields.io/badge/skills-9-informational)](#skills)
 [![Python](https://img.shields.io/badge/python-stdlib--only-3776AB)](ThinkTime/versus/scripts)
 
 Ask an LLM to "brainstorm ideas" or "judge this plan" in one shot and you get the most probable answer, ranked by a judge that likes its own work. You get the scheduling app, the CRM, the dashboard, each with a confident 8/10. ThinkTime replaces that one shot with **structured pipelines**: independent sub-agents fanned out in parallel, adversarial personas, blind pairwise ranking judged in both orders, live evidence checks with hard thresholds, and fixed output contracts that say plainly when the evidence ran out.
 
-It is one Claude Code plugin with eight skills, distributed through this repository's marketplace.
+It is one Claude Code plugin with nine skills, distributed through this repository's marketplace.
 
 ---
 
@@ -48,6 +48,7 @@ All skills run under the `/ThinkTime:` namespace.
 | Skill | Command | What it does | How it works | Use when |
 |---|---|---|---|---|
 | `idea-nebula` | `/ThinkTime:idea-nebula` | Research-backed brainstorm that returns a demand-checked shortlist | 4 parallel entropy-source generators, then a blind both-orders duel ranker, then parallel live demand checks, then a barbell report | You need ideas beyond the obvious first pass |
+| `idea-nebula-product` | `/ThinkTime:idea-nebula-product` | Product-first sibling of `idea-nebula`: ideas ranked on usability, originality and usefulness to users, not profit | Same 4 parallel generators, then 3 blind single-axis judges build a rating matrix, then a live user-check tests whether real people have the problem; revenue, market size and founder fit are not scored | Side projects, open-source tools or free apps that need not make money |
 | `idea-panel` | `/ThinkTime:idea-panel` | Explores a topic through distinct mental-model lenses | 3–4 parallel lens agents (first-principles, jobs-to-be-done, inversion, effectuation) feed a synthesizer that clusters and ranks; opt-in `critical-thinking` lens attacks the framing | You want the same space seen through several frames |
 | `hackathon-idea-nebula` | `/ThinkTime:hackathon-idea-nebula` | Candidate projects for one specific hackathon | idea-nebula's architecture retargeted: `stage` and `recon` generators, feasibility and prior-art checks instead of demand checks, Safe/Swing demo barbell | You have an event and no idea yet |
 | `hackathon-judge` | `/ThinkTime:hackathon-judge` | "Worth building?" and "would it win?", scored separately | Rubric built from the event's rules, a 4-judge panel with conflicting incentives, disagreement report, verdict ladder, hour-by-hour build plan | You have an idea and the event rules |

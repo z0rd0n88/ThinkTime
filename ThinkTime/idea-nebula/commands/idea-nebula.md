@@ -1,6 +1,6 @@
 ---
 description: "Evidence-based brainstorm: 4 independent entropy-source generators, blind pairwise ranking, live demand grounding, barbell shortlist"
-argument-hint: "<topic...> [--founder <desc>] [--context <path>] [--wild <n>] [--banlist] [--no-demand] [--write-to <path>]"
+argument-hint: "<topic...> [--founder <desc>] [--context <path>] [--wild <n>] [--banlist] [--no-demand] [--demand-top <n>] [--plain] [--write-to <path>] [--force]"
 ---
 
 Invoke the `idea-nebula` skill and follow it exactly.
