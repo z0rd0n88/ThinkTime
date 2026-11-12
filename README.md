@@ -2,7 +2,7 @@
 
 **Multi-agent thinking skills for Claude Code: ideation, critique, judging and benchmarking, built to resist the ways LLMs fool themselves.**
 
-[![Version](https://img.shields.io/badge/version-1.4.2-blue)](.claude-plugin/marketplace.json)
+[![Version](https://img.shields.io/badge/version-1.5.0-blue)](.claude-plugin/marketplace.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code plugin](https://img.shields.io/badge/Claude_Code-plugin-D97757)](https://github.com/z0rd0n88/think-time)
 [![Skills](https://img.shields.io/badge/skills-9-informational)](#skills)
@@ -224,7 +224,7 @@ Each skill keeps its `SKILL.md` as a thin orchestration contract. Agent briefs, 
 
 - **One plugin, one marketplace.** The repository root is the marketplace (`thinktime`), and `ThinkTime/` is the only plugin. The marketplace entry name and the manifest name must both stay `ThinkTime`.
 - **Adding a skill.** Create `ThinkTime/<slug>/` with `skills/<slug>/SKILL.md`, then register that directory in the explicit `skills` array of `ThinkTime/.claude-plugin/plugin.json`. Put the usage hint in the frontmatter `argument-hint`. Do not add a `commands/<slug>.md` wrapper with the skill's name: it shadows the skill (#4); only `versus` keeps a differently named wrapper. Runtime paths use `${CLAUDE_PLUGIN_ROOT}`.
-- **Releasing.** Bump `version` in **both** `ThinkTime/.claude-plugin/plugin.json` and the plugin entry (and `metadata.version`) in `.claude-plugin/marketplace.json` for every shipped change. Both are currently `1.4.2`.
+- **Releasing.** Bump `version` in **both** `ThinkTime/.claude-plugin/plugin.json` and the plugin entry (and `metadata.version`) in `.claude-plugin/marketplace.json` for every shipped change. Both are currently `1.5.0`.
 - **Workflow.** Every tracked change goes through a feature branch and a pull request.
 - **Tests.** The `versus` harness has a stdlib-only runtime. pytest is the only test dependency:
 
